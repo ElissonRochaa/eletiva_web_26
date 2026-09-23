@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Base — HTML, CSS e JavaScript puros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="paper">
+
+<div class="ruler left" aria-hidden="true"></div>
+<div class="ruler right" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">&lt;/&gt; <span>base</span>()</div>
+      <ul class="nav-links">
+        <li><a href="#demo">A prova</a></li>
+        <li><a href="#fundamentos">Fundamentos</a></li>
+        <li><a href="#playground">Playground</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false">
+        <span id="themeLabel">papel</span>
+        <span class="switch"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <p class="eyebrow">HTML · CSS · JavaScript — zero frameworks</p>
+        <h1>Antes do atalho,<br>domine <em>a base</em>.</h1>
+        <p class="lead">Esta página inteira — layout, tema claro/escuro, animações e os widgets abaixo — é HTML, CSS e JavaScript puros. Nenhuma biblioteca, nenhum bundler, nenhum build step.</p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn">Ver o código ao vivo ↓</a>
+          <a href="#playground" class="btn ghost">Prova interativa</a>
+        </div>
+      </div>
+
+      <div class="demo reveal" id="demo">
+        <div class="pane code-pane">
+          <div class="pane-head"><span class="dots"><i></i><i></i><i></i></span> index.html</div>
+          <pre id="codeOut"></pre>
+        </div>
+        <div class="pane preview-pane">
+          <div class="pane-head">preview</div>
+          <div class="preview-stage">
+            <div class="p-card" id="pCard">
+              <div class="p-heading" id="pHeading"></div>
+              <p class="p-text" id="pText"></p>
+              <button class="p-btn" id="pBtn" style="display:none;"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section id="fundamentos">
+    <div class="wrap">
+      <p class="eyebrow reveal">Por que isso importa</p>
+      <h2 class="reveal" style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); max-width: 600px;">O que a base te dá — e todo framework empresta dela</h2>
+
+      <div class="features-grid reveal">
+        <div class="feature">
+          <span class="ic">semântica</span>
+          <h3>Marcação que qualquer navegador entende</h3>
+          <p>&lt;section&gt;, &lt;button&gt;, &lt;label&gt; já carregam significado, acessibilidade e comportamento — sem uma linha de JS.</p>
+        </div>
+        <div class="feature">
+          <span class="ic">layout</span>
+          <h3>Grid e Flexbox resolvem 90% dos casos</h3>
+          <p>A maioria dos layouts que hoje viram "componente de framework" é só um display: grid bem pensado.</p>
+        </div>
+        <div class="feature">
+          <span class="ic">interatividade</span>
+          <h3>O DOM já é reativo — você só precisa ouvir</h3>
+          <p>addEventListener, classList e querySelector cobrem acordeões, abas, temas e formulários reais.</p>
+        </div>
+        <div class="feature">
+          <span class="ic">performance</span>
+          <h3>Zero build, zero bundle, zero espera</h3>
+          <p>Sem npm install, sem webpack, sem hidratação. O navegador lê o arquivo e pronto.</p>
+        </div>
+      </div>
+
+      <div class="stat-strip reveal" style="margin-top:24px;">
+        <div class="stat"><b>1</b><span>arquivo .html</span></div>
+        <div class="stat"><b>0</b><span>dependências instaladas</span></div>
+        <div class="stat"><b>0kb</b><span>de framework</span></div>
+        <div class="stat"><b>&lt;1s</b><span>até a primeira renderização</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section id="playground">
+    <div class="wrap">
+      <p class="eyebrow reveal">Prova ao vivo</p>
+      <h2 class="reveal" style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); max-width: 600px;">Três interações reais, sem nenhuma linha de framework</h2>
+
+      <div class="playground reveal">
+        <div class="widget">
+          <div class="widget-top">
+            <h3>Acordeão de perguntas</h3>
+            <button class="code-toggle" data-target="snippet-acc">ver código</button>
+          </div>
+          <div id="faq">
+            <div class="acc-item">
+              <button class="acc-q">Isso escala para um site grande? <span class="plus">+</span></button>
+              <div class="acc-a"><p>Sim — a mesma base (semântica, CSS organizado, JS modular) é o que sustenta qualquer aplicação, framework por baixo ou não.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q">Então por que aprender frameworks depois? <span class="plus">+</span></button>
+              <div class="acc-a"><p>Porque em projetos grandes eles organizam estado e componentes automaticamente. Mas eles fazem isso <em>usando</em> os mesmos DOM, CSS e eventos que você acabou de ver.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q">Este acordeão usa alguma lib? <span class="plus">+</span></button>
+              <div class="acc-a"><p>Nenhuma. É um botão, uma div e cerca de 10 linhas de JavaScript controlando max-height.</p></div>
+            </div>
+          </div>
+          <pre class="snippet" id="snippet-acc">botao.addEventListener("click", () => {
+  item.classList.toggle("open");
+  resposta.style.maxHeight = aberto
+    ? resposta.scrollHeight + "px"
+    : "0px";
+});</pre>
+        </div>
+
+        <div class="widget">
+          <div class="widget-top">
+            <h3>Abas de conteúdo</h3>
+            <button class="code-toggle" data-target="snippet-tabs">ver código</button>
+          </div>
+          <div class="tabs-head" id="tabsHead">
+            <button class="tab-btn active" data-tab="t1">HTML</button>
+            <button class="tab-btn" data-tab="t2">CSS</button>
+            <button class="tab-btn" data-tab="t3">JS</button>
+          </div>
+          <div class="tab-panel active" data-panel="t1"><p>Estrutura o conteúdo e o significado. É a única camada que existe mesmo sem CSS ou JS carregarem.</p></div>
+          <div class="tab-panel" data-panel="t2"><p>Descreve a apresentação. Um bom CSS resolve responsividade, tema e movimento sem tocar em JavaScript.</p></div>
+          <div class="tab-panel" data-panel="t3"><p>Adiciona comportamento sob demanda. Aqui: trocar a classe "active" ao clicar — é só isso.</p></div>
+          <pre class="snippet" id="snippet-tabs">botoes.forEach(b => b.addEventListener("click", () => {
+  ativarPainel(b.dataset.tab);
+}));</pre>
+        </div>
+
+        <div class="widget">
+          <div class="widget-top">
+            <h3>Tema: papel ↔ anteprojeto</h3>
+            <button class="code-toggle" data-target="snippet-theme">ver código</button>
+          </div>
+          <p style="color:var(--ink-soft); font-size:.92rem; margin:0 0 4px;">O botão "papel / anteprojeto" no topo da página já está usando este exato mecanismo: uma troca de atributo no &lt;body&gt; que reescreve todas as variáveis CSS da página.</p>
+          <pre class="snippet" id="snippet-theme">body.dataset.theme =
+  body.dataset.theme === "paper" ? "blueprint" : "paper";
+/* o CSS já reage sozinho via [data-theme="blueprint"] { ... } */</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <p class="eyebrow" style="justify-content:center;">Próxima aula</p>
+        <h2>Domine a base. Depois, escolha o framework com propriedade.</h2>
+        <p>React, Vue e Svelte são ferramentas construídas sobre o mesmo HTML, CSS e JavaScript que você acabou de ver funcionando. Entender a base é o que te permite escolher — e usar — um framework por decisão, não por costume.</p>
+        <a href="#" class="btn">Vamos para os frameworks →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>aula de fundamentos web</span>
+    <span>feito com HTML, CSS e JS — sem build step</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

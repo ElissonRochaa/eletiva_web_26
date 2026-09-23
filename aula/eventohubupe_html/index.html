@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventoHub UPE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="header-inner">
+      <div>
+        <div class="brand">Evento<span>Hub</span> UPE</div>
+        <p>Olá, Maria Eduarda — veja o que está rolando nos campi.</p>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="eventos">Eventos</button>
+        <button class="nav-link" data-view="inscricoes">
+          Minhas inscrições <span id="registrationCount" class="count-badge">0</span>
+        </button>
+        <button class="logout-btn" type="button">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="eventsView" class="view">
+      <div class="filters" aria-label="Filtros por campus">
+        <button class="filter active" data-campus="Todos os campi">Todos os campi</button>
+        <button class="filter" data-campus="Recife">Recife</button>
+        <button class="filter" data-campus="Garanhuns">Garanhuns</button>
+      </div>
+
+      <div id="eventsList" class="events-list"></div>
+    </section>
+
+    <section id="registrationsView" class="view hidden">
+      <div class="section-heading">
+        <h1>Minhas inscrições</h1>
+        <p>Eventos em que você está inscrita.</p>
+      </div>
+      <div id="registrationsList" class="registrations-list"></div>
+    </section>
+  </main>
+
+  <!-- Modal/card de detalhes -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="detail-card">
+      <button class="close-btn" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div id="modalDate" class="detail-date"></div>
+      <div class="detail-content">
+        <span id="modalCampus" class="campus-tag"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalLocation" class="detail-location"></p>
+        <p id="modalDescription" class="detail-description"></p>
+
+        <div class="detail-info">
+          <div>
+            <strong id="modalVacancies"></strong>
+            <span>vagas restantes</span>
+          </div>
+          <div>
+            <strong id="modalDateFull"></strong>
+            <span>data do evento</span>
+          </div>
+        </div>
+
+        <button id="modalRegister" class="register-btn large" type="button">
+          Inscrever-se
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
